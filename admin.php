@@ -42,7 +42,6 @@ if (isset($_POST['submit'])) {
             echo "<th>email</th>\n";
             echo "<th>address</th>\n";
             echo "<th>painting id</th>\n";
-            echo "<th>painting name</th>\n";
             echo "</tr>\n";
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>\n";
@@ -52,7 +51,6 @@ if (isset($_POST['submit'])) {
                 echo "<td>" . $row['email'] . "</td>\n";
                 echo "<td>" . $row['address'] . "</td>\n";
                 echo "<td>" . $row['painting id'] . "</td>\n";
-                echo "<td>" . $row['painting name'] . "</td>\n";
                 echo "</tr>\n";
             }
             echo "</table>\n";

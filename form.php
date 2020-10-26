@@ -23,7 +23,6 @@ if (isset($_POST['submit'])) {
     $email = strip_tags(isset($_POST['email']) ? $_POST['email'] : "");
     $address = strip_tags(isset($_POST['address']) ? $_POST['address'] : "");
     $sqlPaintingID = $_POST['painting_id'];
-    $sqlPaintingName = $_POST['painting_name'];
 
     //connect to database
     require_once "password.php";
@@ -34,14 +33,14 @@ if (isset($_POST['submit'])) {
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     //save order into table
-    $sql = "INSERT INTO `artworkorders` (`id`, `name`, `phone`, `email`, `address`, `painting id`, `painting name`) VALUES "
-        . "(NULL, '$name', '$phone', '$email', '$address', '$sqlPaintingID', '$sqlPaintingName');";
+    $sql = "INSERT INTO `artworkorders` (`id`, `name`, `phone`, `email`, `address`, `painting id`) VALUES "
+        . "(NULL, '$name', '$phone', '$email', '$address', '$sqlPaintingID');";
 
     //inform user that the order was successful or unsuccessful
     if ($conn->query($sql)) {
         echo "Your order was placed successfully.";
     } else {
-        echo "$conn->error";
+        echo "An error occurred when trying to place your order. Please try again.";
     }
 
 } else {
@@ -59,7 +58,6 @@ if (isset($_POST['submit'])) {
         <p><input type="text" name="email" placeholder="email"></p>
         <p><input type="text" name="address" placeholder="address"></p>
         <p><input type="hidden" name="painting_id" value="<?php echo "$paintingID"?>"></p>
-        <p><input type="hidden" name="painting_name" value="<?php echo "$paintingName"?>"></p>
         <p><input type="submit" name="submit"></p>
     </form>
     <?php
