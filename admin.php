@@ -32,7 +32,8 @@ if (isset($_POST['submit'])) {
         $sql = "SELECT * FROM `artworkorders`";
         $result = $conn->query($sql);
 
-        //Display all of the table rows as an HTML table
+        //Display all of the orders as an HTML table
+        echo "<h3>Orders</h3>";
         if ($result->num_rows > 0) {
             echo "<table>\n";
             echo "<tr>\n";
@@ -57,6 +58,38 @@ if (isset($_POST['submit'])) {
         } else {
             echo "There are currently no orders.";
         }
+
+        //Select all rows from the appointments table
+        $appointmentsSQL = "SELECT * FROM `artworkappointments`";
+        $appointmentsResult = $conn->query($appointmentsSQL);
+
+        //Display all of the appointments as an HTML table
+        echo "<h3>Appointments</h3>";
+        if ($appointmentsResult->num_rows > 0) {
+            echo "<table>\n";
+            echo "<tr>\n";
+            echo "<th>id</th>\n";
+            echo "<th>name</th>\n";
+            echo "<th>address</th>\n";
+            echo "<th>phone</th>\n";
+            echo "<th>date</th>\n";
+            echo "<th>time</th>\n";
+            echo "</tr>\n";
+            while ($row = $appointmentsResult->fetch_assoc()) {
+                echo "<tr>\n";
+                echo "<td>" . $row['id'] . "</td>\n";
+                echo "<td>" . $row['name'] . "</td>\n";
+                echo "<td>" . $row['address'] . "</td>\n";
+                echo "<td>" . $row['phone'] . "</td>\n";
+                echo "<td>" . $row['date'] . "</td>\n";
+                echo "<td>" . $row['time'] . "</td>\n";
+                echo "</tr>\n";
+            }
+            echo "</table>\n";
+        } else {
+            echo "There are currently no appointments.";
+        }
+
     } else {
         //Incorrect password entered
         ?>

@@ -44,9 +44,9 @@ if (isset($_POST['submit'])) {
     }
 
 } else {
+    //Submit not clicked yet
     $paintingID = isset($_GET['paintingID']) ? $_GET['paintingID'] : "";
     $paintingName = isset($_GET['paintingName']) ? $_GET['paintingName'] : "";
-    //Submit not clicked yet
     ?>
     <p>Please fill in the details below to complete your order of: </p>
     <p>ID: <?php echo "$paintingID"?></p>
