@@ -1,17 +1,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Cara Art: Admin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="artlisting.php">ART LISTINGS</a></li>
-            <li><a href="booking.php">BOOKINGS</a></li>
-            <li><a href="admin.php">ADMIN</a></li>
-        </ul>
-    </nav>
-    <h2>Admin</h2>
+    <header>
+        <h1 id="nav-title">Cara Art</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="artlisting.php">ART LISTINGS</a></li>
+                <li><a href="booking.php">BOOKINGS</a></li>
+                <li><a href="admin.php">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-section">
+    <h1 class="page-title">Admin</h1>
 </body>
 
 <?php
@@ -33,7 +38,8 @@ if (isset($_POST['submit'])) {
         $result = $conn->query($sql);
 
         //Display all of the orders as an HTML table
-        echo "<h3>Orders</h3>";
+        echo "<h3 class='admin-subtitle'>Orders</h3>";
+        echo "<div class='form-container'>";
         if ($result->num_rows > 0) {
             echo "<table>\n";
             echo "<tr>\n";
@@ -55,8 +61,9 @@ if (isset($_POST['submit'])) {
                 echo "</tr>\n";
             }
             echo "</table>\n";
+            echo "</div>";
         } else {
-            echo "There are currently no orders.";
+            echo "<p class='no-rows-text'>There are currently no orders.</p>";
         }
 
         //Select all rows from the appointments table
@@ -64,7 +71,8 @@ if (isset($_POST['submit'])) {
         $appointmentsResult = $conn->query($appointmentsSQL);
 
         //Display all of the appointments as an HTML table
-        echo "<h3>Appointments</h3>";
+        echo "<h3 class='admin-subtitle'>Appointments</h3>";
+        echo "<div class='form-container'>";
         if ($appointmentsResult->num_rows > 0) {
             echo "<table>\n";
             echo "<tr>\n";
@@ -86,30 +94,31 @@ if (isset($_POST['submit'])) {
                 echo "</tr>\n";
             }
             echo "</table>\n";
+            echo "</div>\n";
         } else {
-            echo "There are currently no appointments.";
+            echo "<p class='no-rows-text'>There are currently no appointments.</p>";
         }
 
     } else {
         //Incorrect password entered
         ?>
-        <p>To view this page, please enter the password below: </p>
-        <form action="admin.php" method="post">
+        <p class="view-page-text">To view this page, please enter the password below: </p>
+        <form class="admin-form" action="admin.php" method="post">
             <p><input type="password" name="password"></p>
-            <p><input type="submit" name="submit"></p>
-            <p>Incorrect password entered.</p>
+            <p id="admin-incorrect-password">Incorrect password.</p>
+            <p><input class="big-button" type="submit" name="submit"></p>
         </form>
         <?php
     }
 } else {
     //Submit not clicked yet
     ?>
-    <p>To view this page, please enter the password below: </p>
-    <form action="admin.php" method="post">
+    <p class="view-page-text">To view this page, please enter the password below: </p>
+    <form class="admin-form" action="admin.php" method="post">
         <p><input type="password" name="password"></p>
-        <p><input type="submit" name="submit"></p>
+        <p><input class="big-button" type="submit" name="submit"></p>
     </form>
     <?php
 }
 ?>
-
+</div>

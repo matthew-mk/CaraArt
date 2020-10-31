@@ -1,0 +1,171 @@
+/* DEFAULT */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+header, section, footer, aside, nav, article, hgroup {
+    display: block;
+}
+
+form p {
+    margin-bottom: 1vh;
+}
+
+/* GENERAL */
+
+.page-title {
+    text-align: center;
+}
+
+.main-section {
+    padding: 2vh 10vw;
+    text-align: center;
+}
+
+.form-para {
+    padding: 3vh;
+}
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    text-align: left;
+    text-decoration: underline;
+}
+
+td {
+    padding-right: 5vh;
+    padding-bottom: 1vh;
+}
+
+.sidebyside-buttons {
+    margin-top: 2vh;
+}
+
+.sidebyside-buttons form {
+    display: inline-block;
+    padding-left: 1vh;
+}
+
+.sidebyside-buttons form input {
+    padding: 0.3vh;
+}
+
+.sidebyside-buttons button {
+    padding: 0.3vh;
+}
+
+.big-button {
+    padding: 0.3vh;
+}
+
+/* NAVIGATION BAR */
+
+header {
+    background-color: forestgreen;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 5%;
+}
+
+#nav-title {
+    color: white;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 0.75vw;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: lightgray;
+    transition: 0.6s ease;
+}
+
+/* HOME PAGE */
+
+#home-page-title {
+    text-align: center;
+}
+
+#main-section-home {
+    padding: 2vh 10vw;
+}
+
+#home-subtitle {
+    margin: 3vh;
+    text-align: center;
+}
+
+#home-about-cara {
+    display: flex;
+}
+
+/* ART LISTINGS PAGE */
+
+#artlistings-main {
+    margin-top: 3vh;
+    text-align: center;
+}
+
+#more-button {
+    padding: 0.2vh;
+}
+
+/* ART LISTINGS FULL DETAILS PAGE*/
+
+/* ORDER FORM PAGE */
+
+#order-form-text {
+    margin-top: 2vh;
+}
+
+#order-form-text p {
+    margin-bottom: 1vh;
+}
+
+/* BOOKINGS PAGE */
+
+.fill-details-text {
+    padding: 2vh;
+}
+
+/* ADMIN PAGE */
+
+#admin-incorrect-password {
+    color: red;
+}
+
+.view-page-text {
+    padding: 2vh;
+}
+
+.admin-form {
+    display: block;
+}
+
+.admin-subtitle {
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    text-align: left;
+}
+
+.no-rows-text {
+    text-align: left;
+}
+
+
+

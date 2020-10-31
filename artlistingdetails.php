@@ -1,16 +1,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Cara Art: Art Listings</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-    <ul>
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="artlisting.php">ART LISTINGS</a></li>
-        <li><a href="booking.php">BOOKINGS</a></li>
-        <li><a href="admin.php">ADMIN</a></li>
-    </ul>
-</nav>
+    <header>
+        <h1 id="nav-title">Cara Art</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="artlisting.php">ART LISTINGS</a></li>
+                <li><a href="booking.php">BOOKINGS</a></li>
+                <li><a href="admin.php">ADMIN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main-section">
 </body>
 
 <?php
@@ -30,7 +35,7 @@ $result = $conn->query($sql);
 
 //display full details from specific row
 if ($result->num_rows > 0) {
-    echo "<table>\n";
+    echo "<table class='centered-table'>\n";
     echo "<tr>\n";
     echo "<th>name</th>\n";
     echo "<th>date of completion</th>\n";
@@ -39,6 +44,7 @@ if ($result->num_rows > 0) {
     echo "<th>description</th>\n";
     echo "</tr>\n";
     while ($row = $result->fetch_assoc()) {
+        echo "<h1 class='page-title'>" . $row['name'] . "</h1>";
         echo "<tr>\n";
         echo "<td>" . $row['name'] . "</td>\n";
         echo "<td>" . $row['date of completion'] . "</td>\n";
@@ -47,8 +53,10 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['description'] . "</td>\n";
         echo "</tr>\n";
         echo "</table>\n";
+        echo "<div class='sidebyside-buttons'>";
         echo "<form action='form.php' method='get'><input type='hidden' name='paintingID' value='" . $row['id'] . "'><input type='hidden' name='paintingName' value='" . $row['name'] . "'><input type='submit' name='orderButton' value='Order'></form>\n";
         echo "<button id='backButton'>Back</button>";
+        echo "</div>";
     }
 }
 ?>
@@ -59,3 +67,4 @@ if ($result->num_rows > 0) {
         document.location='artlisting.php';
     })
 </script>
+</div>
