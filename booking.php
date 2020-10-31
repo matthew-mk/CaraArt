@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $date = strip_tags(isset($_POST['date']) ? $_POST['date'] : "");
     $time = strip_tags(isset($_POST['time']) ? $_POST['time'] : "");
 
-    if (($name != "") && ($address != "") && ($phone != "") && ($date != "") && ($time != "")) {
+    if (($name != "") && ($address != "") && ($phone != "") && ($date != "") && ($time != "") && is_numeric($phone)) {
 
         //connect to database
         require_once "password.php";

@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $address = strip_tags(isset($_POST['address']) ? $_POST['address'] : "");
     $sqlPaintingID = $_POST['painting_id'];
 
-    if ( ($name != "") && ($phone != "") && ($email != "") && ($address != "") && ($sqlPaintingID != "") && (filter_var($email, FILTER_VALIDATE_EMAIL)) ) {
+    if ( ($name != "") && ($phone != "") && ($email != "") && ($address != "") && ($sqlPaintingID != "") && (filter_var($email, FILTER_VALIDATE_EMAIL)) && is_numeric($phone)) {
 
         //connect to database
         require_once "password.php";
