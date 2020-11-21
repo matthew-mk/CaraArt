@@ -8,15 +8,14 @@
         <h1 id="nav-title">Cara Art</h1>
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="artlisting.php">ART LISTINGS</a></li>
-                <li><a href="booking.php">BOOKINGS</a></li>
-                <li><a href="admin.php">ADMIN</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a id="selected-nav" href="artlisting.php">Art Listings</a></li>
+                <li><a href="booking.php">Bookings</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
     </header>
     <div class="main-section">
-    <h1 class="page-title">Cara's Artwork</h1>
 </body>
 
 <?php
@@ -57,37 +56,27 @@ $result = $conn->query($sql);
 
 //display basic info for the selected rows
 if ($result->num_rows > 0) {
-    echo "<div id='artlistings-main'>";
-    echo "<table class='centered-table'>\n";
-    echo "<tr>\n";
-    echo "<th>name</th>\n";
-    echo "<th>size (mm)</th>\n";
-    echo "<th>price (£)</th>\n";
-    echo "</tr>\n";
+    echo "<div id='artlistings-images'>";
     while ($row = $result->fetch_assoc()) {
-        echo "<tr>\n";
-        echo "<td>" . $row['name'] . "</td>\n";
-        echo "<td>" . $row['width (mm)'] . "x" . $row['height (mm)'] . "</td>\n";
-        echo "<td>" . $row['price (£)'] . "</td>\n";
-        echo "<td>" . "<form action='artlistingdetails.php' method='get'><input type='hidden' name='paintingID' value='" . $row['id'] . "'><input id='more-button' type='submit' name='orderButton' value='More'></form>" . "</td>\n";
-        echo "</tr>\n";
+        echo "<div class = artlistings-image>";
+        echo '<p><img src="data:image/jpeg;base64,' . base64_encode($row['image']) .'"/>' . $row['name'] . "</p>\n";
+        echo "<form action='artlistingdetails.php' method='get'><input type='hidden' name='paintingID' value='" . $row['id'] . "'><input id='more-button' type='submit' name='orderButton' value='+'></form>\n";
+        echo "</div>\n";
     }
-    echo "</table>\n";
-    echo "</div>";
+    echo "</div>\n";
 }
 ?>
 <div class="sidebyside-buttons">
 <form action="artlisting.php" method="post">
     <input type="hidden" name="minRowNumValue" value="<?php echo $minRowNum?>">
     <input type="hidden" name="maxRowNumValue" value="<?php echo $maxRowNum?>">
-    <input type="submit" name="previousButton" value="Previous">
+    <input type="submit" name="previousButton" value="<--">
 </form>
 
-<form action="artlisting.php" method="post">
+<form class="sidebyside-right-btn" action="artlisting.php" method="post">
     <input type="hidden" name="minRowNumValue" value="<?php echo $minRowNum?>">
     <input type="hidden" name="maxRowNumValue" value="<?php echo $maxRowNum?>">
-    <input type="submit" name="nextButton" value="Next">
+    <input type="submit" name="nextButton" value="-->">
 </form>
 </div>
 </div>
-

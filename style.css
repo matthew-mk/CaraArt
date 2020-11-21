@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: Avenir, sans-serif;
 }
 
 header, section, footer, aside, nav, article, hgroup {
@@ -17,6 +17,8 @@ form p {
 /* GENERAL */
 
 .page-title {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
     text-align: center;
 }
 
@@ -50,33 +52,67 @@ td {
 
 .sidebyside-buttons form {
     display: inline-block;
-    padding-left: 1vh;
 }
 
 .sidebyside-buttons form input {
-    padding: 0.3vh;
+    padding: 1vh;
+    background-color: white;
+    border: 2px solid goldenrod;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sidebyside-buttons form input:hover {
+    background-color: goldenrod;
+    border: 2px solid darkgoldenrod;
+    color: white;
+    transition: 0.6s ease;
 }
 
 .sidebyside-buttons button {
     padding: 0.3vh;
 }
 
-.big-button {
-    padding: 0.3vh;
+.sidebyside-right-btn {
+    margin-left: 2vh;
+}
+
+.submit-button {
+    padding: 0.4vh;
+    background-color: forestgreen;
+    border: 2px solid darkgreen;
+    color: white;
+    font-size: 14px;
+}
+
+.submit-button:hover {
+    background-color: #00A000;
+    transition: 0.6s ease;
 }
 
 /* NAVIGATION BAR */
 
 header {
-    background-color: forestgreen;
+    background-color: rebeccapurple;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 2% 5%;
 }
 
+#selected-nav {
+    color: goldenrod;
+}
+
 #nav-title {
     color: white;
+    font-family: "Savoye LET";
+    font-size: 65px;
+    line-height: 0px;
+    margin-top: 25px;
+    margin-right: 25px;
+    white-space: nowrap;
 }
 
 nav ul li {
@@ -88,17 +124,24 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
+    white-space: nowrap;
+    font-size: 20px;
 }
 
 nav ul li a:hover {
-    color: lightgray;
+    color: goldenrod;
     transition: 0.6s ease;
 }
 
 /* HOME PAGE */
 
 #home-page-title {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
     text-align: center;
+    font-family: "Savoye LET";
+    font-size: 65px;
+    color: goldenrod;
 }
 
 #main-section-home {
@@ -111,21 +154,166 @@ nav ul li a:hover {
 }
 
 #home-about-cara {
-    display: flex;
+    display: block;
+    width: 60%;
+    margin-right:auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+#home-cara-image {
+    height: 400px;
+    width: 300px;
+    margin-bottom: 2vh;
+    margin-top: 10vh;
+}
+
+#home-about-cara p {
+    font-size: 18px;
+    text-align: justify;
+    margin-bottom: 5vh;
+}
+
+#home-about-cara p a {
+    text-decoration: none;
 }
 
 /* ART LISTINGS PAGE */
 
-#artlistings-main {
-    margin-top: 3vh;
+#artlistings-title {
+    margin-top: 5vh;
     text-align: center;
+    font-family: "Savoye LET";
+    font-size: 65px;
+    color: goldenrod;
+}
+
+#artlistings-images {
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+#artlistings-images img {
+    display: block;
+    width: 200px;
+    height: 150px;
+    padding: 20px;
+}
+
+.artlistings-image {
+    display: block;
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    text-align: center;
+    padding: 10px;
+}
+
+.artlistings-image p {
+    font-family: "Gill Sans";
+    font-size: 20px;
+}
+
+.artlistings-image form {
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 #more-button {
-    padding: 0.2vh;
+    padding: 0.25vh 1vh;
+    background-color: mediumpurple;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid darkgoldenrod;
+    margin-top: 5px;
 }
 
-/* ART LISTINGS FULL DETAILS PAGE*/
+#more-button:hover {
+    background-color: rebeccapurple;
+    transition: 0.6s ease;
+}
+
+#artlistings-buttons {
+    margin-top: 50px;
+}
+
+#artlistings-buttons form {
+    display: inline-block;
+    padding-left: 1vh;
+}
+
+#artlistings-buttons form input {
+    padding: 0.3vh;
+}
+
+#artlistings-buttons button {
+    padding: 0.3vh;
+}
+
+/* ART LISTINGS DETAILS PAGE*/
+
+#ald-title {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    font-size: 40px;
+    font-family: Herculanum;
+}
+
+#ald-pic {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ald-text {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    font-size: 18px;
+    margin-bottom: 3vh;
+}
+
+#ald-desc {
+    font-size: 18px;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    text-align: justify;
+}
+
+#ald-text p {
+    font-size: 18px;
+    font-family: Avenir;
+}
+
+#order-button {
+    padding: 1vh;
+    background-color: mediumpurple;
+    border: 2px solid goldenrod;
+    color: white;
+    font-size: 16px;
+}
+
+#order-button:hover {
+    background-color: rebeccapurple;
+    transition: 0.6s ease;
+}
+
+#back-button {
+    padding: 1vh;
+    background-color: mediumpurple;
+    border: 2px solid goldenrod;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 2vh;
+}
+
+#back-button:hover {
+    background-color: rebeccapurple;
+    transition: 0.6s ease;
+}
 
 /* ORDER FORM PAGE */
 
@@ -169,3 +357,75 @@ nav ul li a:hover {
 
 
 
+
+
+/* DIFFERENT SCREEN SIZES */
+
+@media only screen and (max-width: 690px) {
+
+    /* NAV */
+
+    header {
+        padding-bottom: 20px;
+    }
+
+    #nav-title {
+        font-size: 45px;
+    }
+
+    nav ul {
+        margin-top: 5px;
+    }
+
+    nav ul li a {
+        font-size: 17px;
+    }
+
+    /* HOME + TABLE */
+
+    #home-about-cara {
+        width: 100%;
+    }
+
+    td {
+        padding-right: 0px;
+    }
+
+    /* ARTLISTINGS PAGE */
+
+    .artlistings-image {
+        padding: 50px;
+    }
+
+    /* ARTLISTING DETAILS PAGE */
+
+    #ald-pic {
+        width: 350px;
+        height: 250px;
+    }
+
+    #ald-text {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width:690px) and (max-width: 1030px){
+    #nav-title {
+        font-size: 55px;
+    }
+
+    #ald-pic {
+        width: 500px;
+        height: 325px;
+    }
+
+    #ald-text {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1030px) {
+    #nav-title {
+        font-size: 65px;
+    }
+}

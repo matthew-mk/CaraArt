@@ -8,10 +8,10 @@
         <h1 id="nav-title">Cara Art</h1>
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="artlisting.php">ART LISTINGS</a></li>
-                <li><a href="booking.php">BOOKINGS</a></li>
-                <li><a href="admin.php">ADMIN</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="artlisting.php">Art Listings</a></li>
+                <li><a href="booking.php">Bookings</a></li>
+                <li><a id="selected-nav" href="admin.php">Admin</a></li>
             </ul>
         </nav>
     </header>
@@ -106,7 +106,7 @@ if (isset($_POST['submit'])) {
         <form class="admin-form" action="admin.php" method="post">
             <p><input type="password" name="password"></p>
             <p id="admin-incorrect-password">Incorrect password.</p>
-            <p><input class="big-button" type="submit" name="submit"></p>
+            <p><input class="submit-button" type="submit" name="submit"></p>
         </form>
         <?php
     }
@@ -116,7 +116,7 @@ if (isset($_POST['submit'])) {
     <p class="view-page-text">To view this page, please enter the password below: </p>
     <form class="admin-form" action="admin.php" method="post">
         <p><input type="password" name="password"></p>
-        <p><input class="big-button" type="submit" name="submit"></p>
+        <p><input class="submit-button" type="submit" name="submit"></p>
     </form>
     <?php
 }

@@ -8,10 +8,10 @@
         <h1 id="nav-title">Cara Art</h1>
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="artlisting.php">ART LISTINGS</a></li>
-                <li><a href="booking.php">BOOKINGS</a></li>
-                <li><a href="admin.php">ADMIN</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="artlisting.php">Art Listings</a></li>
+                <li><a href="booking.php">Bookings</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $address = strip_tags(isset($_POST['address']) ? $_POST['address'] : "");
     $sqlPaintingID = $_POST['painting_id'];
 
-    if ( ($name != "") && ($phone != "") && ($email != "") && ($address != "") && ($sqlPaintingID != "") && (filter_var($email, FILTER_VALIDATE_EMAIL)) && is_numeric($phone)) {
+    if ( ($name != "") && ($phone != "") && ($email != "") && ($address != "") && ($sqlPaintingID != "") && (filter_var($email, FILTER_VALIDATE_EMAIL)) ) {
 
         //connect to database
         require_once "password.php";
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
         <p><input type="email" name="email" placeholder="email" onchange="checkEmail()"></p>
         <p><input type="text" name="address" placeholder="address" onchange="checkAddress()"></p>
         <p><input type="hidden" name="painting_id" value="<?php echo "$paintingID"?>"></p>
-        <p><input class="big-button" type="submit" name="submit"></p>
+        <p><input class="submit-button" type="submit" name="submit"></p>
     </form>
     <?php
 }

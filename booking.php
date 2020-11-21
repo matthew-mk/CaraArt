@@ -8,10 +8,10 @@
         <h1 id="nav-title">Cara Art</h1>
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="artlisting.php">ART LISTINGS</a></li>
-                <li><a href="booking.php">BOOKINGS</a></li>
-                <li><a href="admin.php">ADMIN</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="artlisting.php">Art Listings</a></li>
+                <li><a id="selected-nav" href="booking.php">Bookings</a></li>
+                <li><a href="admin.php">Admin</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
     $date = strip_tags(isset($_POST['date']) ? $_POST['date'] : "");
     $time = strip_tags(isset($_POST['time']) ? $_POST['time'] : "");
 
-    if (($name != "") && ($address != "") && ($phone != "") && ($date != "") && ($time != "") && is_numeric($phone)) {
+    if (($name != "") && ($address != "") && ($phone != "") && ($date != "") && ($time != "")) {
 
         //connect to database
         require_once "password.php";
@@ -64,7 +64,7 @@ if (isset($_POST['submit'])) {
         <p><input type="text" name="phone" placeholder="phone number" onchange="checkPhone()"></p>
         <p><input type="date" name="date" placeholder="date" onchange="checkDate()"></p>
         <p><input type="time" name="time" placeholder="time" onchange="checkTime()"></p>
-        <p><input class="big-button" type="submit" name="submit"></p>
+        <p><input class="submit-button" type="submit" name="submit"></p>
     </form>
     <?php
 }
